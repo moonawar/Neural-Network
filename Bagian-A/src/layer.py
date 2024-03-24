@@ -20,5 +20,5 @@ class Layer:
                 self.function = lambda net: np.exp(net) / np.sum(np.exp(net))
 
     def forward(self, input: np.array):
-        self.output = self.function(np.dot(input, self.weights) + self.bias)
-        return self.output
+        output = self.function(np.dot(input, self.weights) + self.bias)
+        return output
