@@ -2,7 +2,7 @@ import numpy as np
 from activation import activation
 
 class Layer:
-    def __init__(self, neuron: int, activation_function: str, weights: np.array, bias: list):
+    def __init__(self, neuron: int, activation_function: str, weights: np.array, bias: np.array):
         self.neuron = neuron
         self.weights = weights
         self.bias = bias
