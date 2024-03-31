@@ -1,5 +1,6 @@
 import numpy as np
-from activation import activation
+from constant import activation
+from activation_function import ActivationFunction
 
 class Layer:
     def __init__(self, neuron: int, activation_function: str, weights: np.array, bias: np.array):
@@ -10,14 +11,7 @@ class Layer:
             raise Exception('Invalid activation function')
         else:
             self.activation_function = activation_function
-            if activation_function == 'sigmoid':
-                self.function = lambda net: 1 / (1 + np.exp(-net))
-            elif activation_function == 'relu':
-                self.function = lambda net: np.maximum(0, net)
-            elif activation_function == 'linear':
-                self.function = lambda net: net
-            elif activation_function == 'softmax':
-                self.function = lambda net: np.exp(net) / np.sum(np.exp(net))
+            self.function = ActivationFunction(activation_function).get_activation_function()
 
     def forward(self, input: np.array):
         output = self.function(np.dot(input, self.weights) + self.bias)
