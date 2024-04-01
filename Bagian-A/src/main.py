@@ -3,7 +3,7 @@ import numpy as np
 from ffnn import FFNN
 from layer import Layer
 
-model = open(f'../../Bagian-A/test/softmax.json', 'r')
+model = open(f'../../Bagian-A/test/multilayer.json', 'r')
 model = json.load(model)
 
 layers = model['case']['model']['layers']
