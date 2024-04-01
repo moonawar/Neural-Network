@@ -3,7 +3,7 @@ import numpy as np
 from ffnn import FFNN
 from layer import Layer
 
-model = open(f'../../Bagian-A/test/relu.json', 'r')
+model = open(f'../../Bagian-A/test/relu-batch.json', 'r')
 model = json.load(model)
 
 layers = model['case']['model']['layers']
@@ -18,7 +18,11 @@ for i in range (len(layers)):
 input = model["case"]["input"]
 
 output = ffnn.forward(input)
-expected_output = model['expect']['output']
+expected_output = np.array(model['expect']['output'])
 
-print(f'output: {output}')
-print(f'expected output: {expected_output}')
+for i in range(len(output)):
+    print(f'output {i+1}: {output[i]}')
+    print(f'expected_output {i+1}: {expected_output[i]}')
+    print(f'output == expected_output: {np.allclose(output[i], expected_output[i])}')
+
+    print() if i != len(output)-1 else None
