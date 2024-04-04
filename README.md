@@ -4,6 +4,7 @@
 
 | Nama | NIM |
 | ---- | --- |
-| Muhammad Alif Putra Yasa | 13520135 |
-| Muhammad Gilang Ramadhan | 13520137 |
-| Willy Wilsen             | 13520160 |
+| Diky Restu Maulana        | 13520017 |
+| Muhammad Gilang Ramadhan  | 13520137 |
+| Louis Caesa Kesuma        | 13521069 |
+| Addin Munawwar Yusuf      | 13521085 |
