@@ -15,4 +15,4 @@ class Layer:
 
     def forward(self, input: np.array):
         output = self.function(np.dot(input, self.weights) + self.bias)
-        return output
+        return np.round(output, decimals=7)
