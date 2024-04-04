@@ -19,7 +19,7 @@ c. Memberikan output untuk input berupa batch.
 6. Direkomendasikan membuat layer dan fungsi aktivasi secara modular.
 
 ## How to run:
-1. go to src directory
+1. Pergi ke src directory
 ```
 > cd src/api
 ```
@@ -27,4 +27,8 @@ c. Memberikan output untuk input berupa batch.
 ```
 > pip install -r requirements.txt
 ```
-3. You can run instead for all of them by IPYNB file
+3. Untuk menjalankan program dapat pada file main.py dengan cara mengganti path dari test case yang ingin ditest pada line 6 di file main.py. Kemudian dapat langsung menjalankannya diterminal dengan cara mengetik command berikut.
+```
+> python main.py
+```
+atau dengan cara menjalankannya langsung dari file .ipynb untuk dapat memperoleh visualisasi untuk setiap test case.
