@@ -3,14 +3,14 @@
 ## Deskripsi Tugas:
 Rancanglah program dalam bahasa Python untuk membuat jaringan saraf tiruan pada bagian
 feed forward neural network (FFNN).
-Spesifikasi
+### Spesifikasi
 1. Pada bagian A, program berfungsi sebagai neural network yang dapat melakukan feed forward dari input yang diberikan.
 2. Program dapat menerima masukan dari file JSON.
 3. Implementasi pada fungsi aktivasi berikut:
-1) Linear
-2) ReLU
-3) Sigmoid
-4) Softmax
+- Linear
+- ReLU
+- Sigmoid
+- Softmax
 4. Program dapat menyimpan bobot (weights) dan struktur model.
 5. Implementasi forward propagation untuk FFNN dengan kemampuan:
 a. Menampilkan model berupa struktur jaringan dan bobotnya, formatnya bebas.
