@@ -10,8 +10,10 @@ class Layer:
         if activation_function not in activation:
             raise Exception('Invalid activation function')
         else:
-            self.activation_function = activation_function
-            self.function = ActivationFunction(activation_function).get_activation_function()
+            self.activation_function = ActivationFunction(activation_function)
+            self.function = self.activation_function.get_activation_function()
+            self.error_term_output = self.activation_function.get_error_term_output()
+            self.error_term_hidden = self.activation_function.get_error_term_hidden()
 
     def forward(self, input: np.array):
         output = self.function(np.dot(input, self.weights) + self.bias)
