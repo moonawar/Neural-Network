@@ -78,7 +78,7 @@ def calculateWithSavedModel(fileName):
     output = ffnn.forward(input).tolist()
     expected_output = model['expect']['output']
     print("==========================================================================================================================================================================================================================")
-    print("Node values: ", ffnn.node_bobots)
+    print("Node values: ", ffnn.node_weights)
     print(f'output: {output}')
     print(f'expected output: {expected_output}')
     print("==========================================================================================================================================================================================================================")
@@ -115,7 +115,7 @@ def calculateWithoutSavedModel(fileName):
     output = ffnn.forward(input).tolist()
     expected_output = model['expect']['output']
     print("==========================================================================================================================================================================================================================")
-    print("Node values: ", ffnn.node_bobots)
+    print("Node values: ", ffnn.node_weights)
 
     print(f'output: {output}')
     print(f'expected output: {expected_output}')

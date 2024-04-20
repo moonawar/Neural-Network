@@ -3,7 +3,7 @@ from constant import activation
 from activation_function import ActivationFunction
 
 class Layer:
-    def __init__(self, neuron: int, activation_function: str, weights: np.array, bias: np.array):
+    def __init__(self, neuron: int, activation_function: str, weights: np.array, bias: np.array, out: bool = False):
         self.neuron = neuron
         self.weights = weights
         self.bias = bias
@@ -12,9 +12,16 @@ class Layer:
         else:
             self.activation_function = ActivationFunction(activation_function)
             self.function = self.activation_function.get_activation_function()
-            self.error_term_output = self.activation_function.get_error_term_output()
-            self.error_term_hidden = self.activation_function.get_error_term_hidden()
+            if out:
+                self.error_term = self.activation_function.get_error_term_output()
+            else:
+                self.error_term = self.activation_function.get_error_term_hidden()
 
     def forward(self, input: np.array):
         output = self.function(np.dot(input, self.weights) + self.bias)
-        return np.round(output, decimals=7)
+        self.last_activation = np.round(output, decimals=7)
+        return self.last_activation
+
+    def update_weight(self, input: np.array, error_term: np.array, learning_rate: float):
+        self.weights += learning_rate * np.dot(input.T, error_term)
+        self.bias += learning_rate * error_term.sum(axis=0)
