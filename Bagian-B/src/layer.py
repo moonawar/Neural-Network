@@ -7,6 +7,7 @@ class Layer:
         self.neuron = neuron
         self.weights = weights
         self.bias = bias
+        self.out = out
         if activation_function not in activation:
             raise Exception('Invalid activation function')
         else:
@@ -16,10 +17,10 @@ class Layer:
                 self.error_term = self.activation_function.get_error_term_output()
             else:
                 self.error_term = self.activation_function.get_error_term_hidden()
+            self.loss = self.activation_function.get_loss()
 
     def forward(self, input: np.array):
-        output = self.function(np.dot(input, self.weights) + self.bias)
-        self.last_activation = np.round(output, decimals=7)
+        self.last_activation = self.function(np.dot(input, self.weights) + self.bias)
         return self.last_activation
 
     def update_weight(self, input: np.array, error_term: np.array, learning_rate: float):

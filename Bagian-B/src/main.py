@@ -163,7 +163,7 @@ def main():
         print(f"{l}. Input test file path manually")
 
         test_case = input("Choose test case: ")
-        # test_case = '3'
+        # test_case = '6'
 
         while test_case not in BAGIAN_B_TEST_CASES.keys() and test_case != str(l):
             print("Invalid choice. Please choose again.")
