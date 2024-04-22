@@ -8,14 +8,14 @@ from ffnn import *
 # for visualizing the model
 def visualizeModel(ffnn, weights):
     # Initialize a directed graph for visualization
-    node_bobots = ffnn.node_bobots
-    batch_count = len(node_bobots)
+    node_weights = ffnn.node_weights
+    batch_count = len(node_weights)
     for batch_num in range(batch_count):
         neural_network_graph = NeuralNetworkGraph()
 
-        neural_network_graph.add_all_nodes(node_bobots[batch_num])
+        neural_network_graph.add_all_nodes(node_weights[batch_num])
 
-        neural_network_graph.add_all_edges(node_bobots[batch_num])
+        neural_network_graph.add_all_edges(node_weights[batch_num])
 
         # Assuming neural_network_graph.graphs is your graph object
         neural_network_graphs = neural_network_graph.graphs  # Assuming this is a correct reference
