@@ -72,8 +72,9 @@ BAGIAN_B_TEST_CASES = {
     '3': '../../Bagian-B/test/linear.json',
     '4': '../../Bagian-B/test/mlp.json',
     '5': '../../Bagian-B/test/relu_b.json',
-    '6': '../../Bagian-B/test/softmax.json',
-    '7': '../../Bagian-B/test/softmax_two_layer.json',
+    '6': '../../Bagian-B/test/sigmoid.json',
+    '7': '../../Bagian-B/test/softmax.json',
+    '8': '../../Bagian-B/test/softmax_two_layer.json',
 }
 
 def start_test_case_b(test_case):
@@ -128,8 +129,7 @@ def main():
     print("1. Load FFNN model")
     print("2. Train FFNN model")
 
-    # choice = input("Choose your path: ")
-    choice = '2'
+    choice = input("Choose your path: ")
     while choice != '1' and choice != '2':
         print("Invalid choice. Please choose again.")
         choice = input("Choose your path: ")
