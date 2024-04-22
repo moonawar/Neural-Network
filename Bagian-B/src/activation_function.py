@@ -12,7 +12,7 @@ class ActivationFunction:
             self.name = 'relu'
             self.function = lambda net: np.maximum(0, net)
             self.error_term_output = lambda output, target : np.where(output > 0, 1, 0) * (target - output)
-            self.error_term_hidden = lambda output, error_term_output, weights : np.where(output > 0, 1, 0) * np.dot(error_term_output, weights.T)
+            self.error_term_hidden = lambda output, error_term_output, weights : np.where(output >= 0, 1, 0) * np.dot(error_term_output, weights.T)
             self.loss = lambda output, target : np.sum((target - output) ** 2) / 2
         elif activation_function == 'linear':
             self.name = 'linear'
