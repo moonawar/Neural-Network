@@ -24,16 +24,18 @@ class ActivationFunction:
             self.name = 'softmax'
             self.function = lambda net: np.exp(net) / np.sum(np.exp(net))
             self.error_term_output = lambda output, target : self.softmax_error_term(output, target)
-            self.error_term_hidden = lambda output, target, _ : self.softmax_error_term(output, target)
+            self.error_term_hidden = lambda _, error_term_output, __ : error_term_output;
             self.loss = lambda output, target : self.softmax_loss(output, target)
 
     def softmax_error_term(self, output, target):
         correct_label = np.argmax(target, axis=1)
         error_term = output.copy()
+
         for i in range(len(correct_label)):
             error_term[i][correct_label[0]] = - (1 - output[i][correct_label[0]])
-        return error_term
 
+        return error_term
+    
     def softmax_loss(self, output, target):
         target_label = np.argmax(target, axis=1)
         return -np.sum(np.log(output[np.arange(len(target_label)), target_label]))
