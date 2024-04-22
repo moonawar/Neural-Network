@@ -129,8 +129,7 @@ def main():
     print("1. Load FFNN model")
     print("2. Train FFNN model")
 
-    # choice = input("Choose your path: ")
-    choice = '2'
+    choice = input("Choose your path: ")
     while choice != '1' and choice != '2':
         print("Invalid choice. Please choose again.")
         choice = input("Choose your path: ")
