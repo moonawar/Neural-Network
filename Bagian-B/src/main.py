@@ -29,12 +29,12 @@ from layer import Layer
 
 # region BAGIAN A
 BAGIAN_A_TEST_CASES = {
-    '1': '../../Bagian-A/test/linear.json',
-    '2': '../../Bagian-A/test/reLU.json',
-    '3': '../../Bagian-A/test/sigmoid.json',
-    '4': '../../Bagian-A/test/softmax.json',
-    '5': '../../Bagian-A/test/multilayer.json',
-    '6': '../../Bagian-A/test/multilayer_softmax.json',
+    '1': '../../Bagian-B/test/linear.json',
+    '2': '../../Bagian-B/test/reLU.json',
+    '3': '../../Bagian-B/test/sigmoid.json',
+    '4': '../../Bagian-B/test/softmax.json',
+    '5': '../../Bagian-B/test/multilayer.json',
+    '6': '../../Bagian-B/test/multilayer_softmax.json',
 }
 
 def start_test_case_a(test_case):

@@ -57,11 +57,11 @@ def visualizeModel(ffnn, weights):
 
 # with saved model
 def calculateWithSavedModel(fileName):
-    model = open(f'../../Bagian-A/test/{fileName}.json', 'r')
+    model = open(f'../../Bagian-B/test/{fileName}.json', 'r')
     model = json.load(model)
 
     # loading the saved models (it contains the layers and weights)
-    savedModel = open(f'../../Bagian-A/model/{fileName}_latest_weights_and_structures.json', 'r')
+    savedModel = open(f'../../Bagian-B/model/{fileName}_latest_weights_and_structures.json', 'r')
     savedModel = json.load(savedModel)
 
     layers = savedModel['case']['model']['layers']
@@ -87,7 +87,7 @@ def calculateWithSavedModel(fileName):
 
 # without using saved model (contains weights and structure)
 def calculateWithoutSavedModel(fileName):
-    model = open(f'../../Bagian-A/test/{fileName}.json', 'r')
+    model = open(f'../../Bagian-B/test/{fileName}.json', 'r')
     model = json.load(model)
 
     layers = model['case']['model']['layers']
@@ -126,5 +126,5 @@ def calculateWithoutSavedModel(fileName):
 # for saving the model
 def saveModel(weights, layers, fileName):
     case_dict = {'case': {'weights': weights, 'model': {'layers': layers}}}
-    with open(f"../../Bagian-A/model/{fileName}_latest_weights_and_structures.json", 'w') as outfile:
+    with open(f"../../Bagian-B/model/{fileName}_latest_weights_and_structures.json", 'w') as outfile:
         json.dump(case_dict, outfile, indent=4)
